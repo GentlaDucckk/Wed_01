@@ -23,23 +23,24 @@
             
             if (newTab) {
                 // Wait for the new tab to load before appending the iframe
-                newTab.document.write('<html><head><title>Loading...</title></head><body></body></html>');
-                newTab.document.close(); // Close the document to enable further manipulations
-                
-                // Use a slight delay to ensure the tab is ready
-                setTimeout(function() {
-                    // Create an iframe element
-                    var iframe = newTab.document.createElement('iframe');
-                    iframe.style.width = '100%';
-                    iframe.style.height = '100vh'; // Full screen height
-                    iframe.style.border = 'none'; // Remove border
+                // Check if newTab.document is ready
+                var interval = setInterval(function() {
+                    if (newTab.document.body) {
+                        clearInterval(interval);
+                        
+                        // Create an iframe element
+                        var iframe = newTab.document.createElement('iframe');
+                        iframe.style.width = '100%';
+                        iframe.style.height = '100vh'; // Full screen height
+                        iframe.style.border = 'none'; // Remove border
 
-                    // Set the iframe source to the target URL
-                    iframe.src = url;
+                        // Set the iframe source to the target URL
+                        iframe.src = url;
 
-                    // Append the iframe to the new tab's document
-                    newTab.document.body.appendChild(iframe);
-                }, 100);
+                        // Append the iframe to the new tab's document
+                        newTab.document.body.appendChild(iframe);
+                    }
+                }, 50); // Check every 50ms until the body is available
             } else {
                 alert("Pop-up blocked. Please allow pop-ups for this site.");
             }
@@ -65,6 +66,9 @@
         <li><a href="javascript:void(0);" onclick="openCloakedTab('https://55gms.com/g/')">https://55gms.com/g/</a></li>
         <li><a href="javascript:void(0);" onclick="openCloakedTab('https://now.gg/')">https://now.gg/</a></li>
     </ul>
+</body>
+</html>
+
 </body>
 </html>
 
