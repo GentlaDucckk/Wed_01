@@ -18,8 +18,23 @@
     </style>
     <script>
         function openCloakedTab(url) {
-            // Open a new tab with the provided URL
-            window.open(url, '_blank');
+            // Open a new tab with about:blank
+            var newTab = window.open('about:blank', '_blank');
+            if (newTab) {
+                // Create an iframe element
+                var iframe = newTab.document.createElement('iframe');
+                iframe.style.width = '100%';
+                iframe.style.height = '100vh'; // Full screen height
+                iframe.style.border = 'none'; // Remove border
+
+                // Set the iframe source to the target URL
+                iframe.src = url;
+
+                // Append the iframe to the new tab's document
+                newTab.document.body.appendChild(iframe);
+            } else {
+                alert("Pop-up blocked. Please allow pop-ups for this site.");
+            }
         }
     </script>
 </head>
@@ -44,3 +59,4 @@
     </ul>
 </body>
 </html>
+
