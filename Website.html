@@ -22,27 +22,20 @@
             var newTab = window.open('about:blank', '_blank');
             
             if (newTab) {
-                // Wait for the new tab to load before appending the iframe
-                // Check if newTab.document is ready
-                var interval = setInterval(function() {
-                    if (newTab.document.body) {
-                        clearInterval(interval);
-                        
-                        // Create an iframe element
-                        var iframe = newTab.document.createElement('iframe');
-                        iframe.style.width = '100%';
-                        iframe.style.height = '100vh'; // Full screen height
-                        iframe.style.border = 'none'; // Remove border
+                // Set a slight timeout to ensure the tab is fully opened
+                setTimeout(function() {
+                    // Create an iframe element
+                    var iframe = newTab.document.createElement('iframe');
+                    iframe.style.width = '100%';
+                    iframe.style.height = '100vh'; // Full screen height
+                    iframe.style.border = 'none'; // Remove border
 
-                        // Set the iframe source to the target URL
-                        iframe.src = url;
+                    // Set the iframe source to the target URL
+                    iframe.src = url;
 
-                        // Append the iframe to the new tab's document
-                        newTab.document.body.appendChild(iframe);
-                    }
-                }, 50); // Check every 50ms until the body is available
-            } else {
-                alert("Pop-up blocked. Please allow pop-ups for this site.");
+                    // Append the iframe to the new tab's document
+                    newTab.document.body.appendChild(iframe);
+                }, 50); // Slight delay before injecting iframe
             }
         }
     </script>
@@ -68,7 +61,3 @@
     </ul>
 </body>
 </html>
-
-</body>
-</html>
-
