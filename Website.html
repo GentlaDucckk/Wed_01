@@ -20,18 +20,26 @@
         function openCloakedTab(url) {
             // Open a new tab with about:blank
             var newTab = window.open('about:blank', '_blank');
+            
             if (newTab) {
-                // Create an iframe element
-                var iframe = newTab.document.createElement('iframe');
-                iframe.style.width = '100%';
-                iframe.style.height = '100vh'; // Full screen height
-                iframe.style.border = 'none'; // Remove border
+                // Wait for the new tab to load before appending the iframe
+                newTab.document.write('<html><head><title>Loading...</title></head><body></body></html>');
+                newTab.document.close(); // Close the document to enable further manipulations
+                
+                // Use a slight delay to ensure the tab is ready
+                setTimeout(function() {
+                    // Create an iframe element
+                    var iframe = newTab.document.createElement('iframe');
+                    iframe.style.width = '100%';
+                    iframe.style.height = '100vh'; // Full screen height
+                    iframe.style.border = 'none'; // Remove border
 
-                // Set the iframe source to the target URL
-                iframe.src = url;
+                    // Set the iframe source to the target URL
+                    iframe.src = url;
 
-                // Append the iframe to the new tab's document
-                newTab.document.body.appendChild(iframe);
+                    // Append the iframe to the new tab's document
+                    newTab.document.body.appendChild(iframe);
+                }, 100);
             } else {
                 alert("Pop-up blocked. Please allow pop-ups for this site.");
             }
