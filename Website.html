@@ -20,30 +20,24 @@
         function openCloakedTab(url) {
             // Open a new tab with about:blank
             var newTab = window.open('about:blank', '_blank');
-            
-            if (newTab) {
-                // Set a slight timeout to ensure the tab is fully opened
-                setTimeout(function() {
-                    // Create an iframe element
-                    var iframe = newTab.document.createElement('iframe');
-                    iframe.style.width = '100%';
-                    iframe.style.height = '100vh'; // Full screen height
-                    iframe.style.border = 'none'; // Remove border
+            // Create an iframe element
+            var iframe = newTab.document.createElement('iframe');
+            iframe.style.width = '100%';
+            iframe.style.height = '100vh'; // Full screen height
+            iframe.style.border = 'none'; // Remove border
 
-                    // Set the iframe source to the target URL
-                    iframe.src = url;
+            // Set the iframe source to the target URL
+            iframe.src = url;
 
-                    // Append the iframe to the new tab's document
-                    newTab.document.body.appendChild(iframe);
-                }, 50); // Slight delay before injecting iframe
-            }
+            // Append the iframe to the new tab's document
+            newTab.document.body.appendChild(iframe);
         }
     </script>
 </head>
 <body>
     <p style="color: #008000;">A site made by GentlaDucckk, on GitHub (https://github.com/GentlaDucckk)</p>
     <h1><u>Gentlas Educational Layer</u></h1>
-    <h2>We Got About:Blank Working :)</h2>
+    <h2>An early beta of a new educational website :)</h2>
 
     <h3>Welcome to Gentlas EDUCATIONAL Layer</h3>
     <ul>
@@ -51,13 +45,15 @@
         <li><a href="javascript:void(0);" onclick="openCloakedTab('https://neal.fun')">Neal.fun</a></li>
         <li><a href="javascript:void(0);" onclick="openCloakedTab('https://x8bitrain.github.io/webXash/')">x8bitrain.github.io/webXash</a></li>
         <li><a href="javascript:void(0);" onclick="openCloakedTab('https://historyspot.com/')">historyspot.com (Patched)</a></li>
+        <li><a href="javascript:void(0);" onclick="openCloakedTab('https://historyspot.com/')">historyspot.com (Patched)</a></li>
         <li><a href="javascript:void(0);" onclick="openCloakedTab('https://mathster.com/games/tetris/')">mathster.com/games/tetris</a></li>
+        <li><a href="javascript:void(0);" onclick="openCloakedTab('https://elephantmunchingcontest.tech/')">elephantmunchingcontest.tech (Patched)</a></li>
+        <li><a href="javascript:void(0);" onclick="openCloakedTab('https://sites.google.com/view/burritoedition/wedgl/cooki-clicker/')">sites.google.com/view/burritoedition/wedgl/cooki-clicker (Broken)</a></li>
         <li><a href="javascript:void(0);" onclick="openCloakedTab('https://elephantmunchingcontest.tech/')">elephantmunchingcontest.tech (Patched)</a></li>
         <li><a href="javascript:void(0);" onclick="openCloakedTab('https://sites.google.com/view/burritoedition/wedgl/cooki-clicker/')">sites.google.com/view/burritoedition/wedgl/cooki-clicker (Broken)</a></li>
         <li><a href="javascript:void(0);" onclick="openCloakedTab('https://nytimes.com/games/wordle/index.html/')">nytimes.com/games/wordle/index.html</a></li>
         <li><a href="javascript:void(0);" onclick="openCloakedTab('https://b-classs.org/')">https://b-classs.org/</a></li>
         <li><a href="javascript:void(0);" onclick="openCloakedTab('https://55gms.com/g/')">https://55gms.com/g/</a></li>
-        <li><a href="javascript:void(0);" onclick="openCloakedTab('https://now.gg/')">https://now.gg/(Broken For now)</a></li>
     </ul>
 </body>
 </html>
