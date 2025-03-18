@@ -3,23 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Tab</title>
+    <title>Gentlas Educational Layer - Fun and Interactive Games</title>
     <style>
         body {
-            background-image: url('wp1933952-pixel-art-wallpapers.jpg'); /* Correct background-image property */
-            background-size: cover; /* Ensures the image covers the whole screen */
+            background-image: url('wp1933952-pixel-art-wallpapers.jpg');
+            background-size: cover;
             color: white;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
         }
+
         a {
-            color: #00FF00; /* Green links */
+            color: #00FF00;
+            text-decoration: none; /* Removes underline */
         }
+
         a:hover {
-            color: #FF00FF; /* Pink links when hovered */
+            color: #FF00FF;
+            text-decoration: underline; /* Adds underline on hover */
+        }
+
+        a:focus, a:active {
+            outline: 2px solid #FFFF00; /* Adds an outline for accessibility */
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px auto;
+            width: 80%;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        p {
+            text-align: center;
+            color: #008000;
+        }
+
+        @media screen and (max-width: 768px) {
+            ul {
+                width: 100%;
+            }
+
+            li {
+                text-align: center;
+            }
         }
     </style>
     <script>
         function openCloakedTab(url) {
-            // Open a new tab with about:blank
             var newTab = window.open('about:blank', '_blank');
             
             if (!newTab) {
@@ -27,39 +67,33 @@
                 return;
             }
             
-            // Create an iframe element
             var iframe = newTab.document.createElement('iframe');
             iframe.style.width = '100%';
-            iframe.style.height = '100vh'; // Full screen height
-            iframe.style.border = 'none'; // Remove border
-
-            // Set the iframe source to the target URL
+            iframe.style.height = '100vh';
+            iframe.style.border = 'none';
             iframe.src = url;
 
-            // Append the iframe to the new tab's document
             newTab.document.body.appendChild(iframe);
         }
     </script>
 </head>
 <body>
-    <p style="color: #008000;">A site made by GentlaDucckk, on GitHub (https://github.com/GentlaDucckk)</p>
+    <p>A site made by GentlaDucckk, on GitHub (<a href="https://github.com/GentlaDucckk" target="_blank">GitHub</a>)</p>
     <h1><u>Gentlas Educational Layer</u></h1>
     <h2>Some Links Might Take a While To Load</h2>
-
     <h3>Welcome to Gentlas EDUCATIONAL Layer</h3>
     <ul>
-        <li><a href="javascript:void(0);" onclick="openCloakedTab('https://shellshock.io')" style="color:white;" title="Shellshock.io - Online game">https://shellshock.io</a></li>
-        <li><a href="javascript:void(0);" onclick="openCloakedTab('https://neal.fun')" style="color:white;" title="Neal.fun - Interactive fun games">Neal.fun</a></li>
-        <li><a href="javascript:void(0);" onclick="openCloakedTab('https://x8bitrain.github.io/webXash/')" style="color:white;" title="x8bitrain's WebXash project">x8bitrain.github.io/webXash</a></li>
+        <li><a href="javascript:void(0);" onclick="openCloakedTab('https://shellshock.io')" title="Shellshock.io - Online game">https://shellshock.io</a></li>
+        <li><a href="javascript:void(0);" onclick="openCloakedTab('https://neal.fun')" title="Neal.fun - Interactive fun games">Neal.fun</a></li>
+        <li><a href="javascript:void(0);" onclick="openCloakedTab('https://x8bitrain.github.io/webXash/')" title="x8bitrain's WebXash project">x8bitrain.github.io/webXash</a></li>
         <li><a href="javascript:void(0);" onclick="openCloakedTab('https://historyspot.com/')" style="color:green;" title="Historyspot - Patched version">historyspot.com (Fixed)</a></li>
-        <li><a href="javascript:void(0);" onclick="openCloakedTab('https://mathster.com/games/tetris/')" style="color:white;" title="Mathster's Tetris game">mathster.com/games/tetris</a></li>
+        <li><a href="javascript:void(0);" onclick="openCloakedTab('https://mathster.com/games/tetris/')" title="Mathster's Tetris game">mathster.com/games/tetris</a></li>
         <li><a href="javascript:void(0);" onclick="openCloakedTab('https://elephantmunchingcontest.tech/')" style="color:red;" title="Elephant Munching Contest - Patched version">elephantmunchingcontest.tech (Patched)</a></li>
         <li><a href="javascript:void(0);" onclick="openCloakedTab('https://sites.google.com/view/burritoedition/wedgl/cooki-clicker/')" style="color:red;" title="Burrito Edition - Broken Cookie Clicker">sites.google.com/view/burritoedition/wedgl/cooki-clicker (Broken)</a></li>
-        <li><a href="javascript:void(0);" onclick="openCloakedTab('https://nytimes.com/games/wordle/index.html/')" style="color:white;" title="NYTimes Wordle game">nytimes.com/games/wordle/index.html</a></li>
-        <li><a href="javascript:void(0);" onclick="openCloakedTab('https://b-classs.org/')" style="color:white;" title="B-ClassS website">https://b-classs.org/</a></li>
-        <li><a href="javascript:void(0);" onclick="openCloakedTab('https://55gms.com/g/')" style="color:white;" title="55GMS - Gaming site">https://55gms.com/g/</a></li>
-        <li><a href="javascript:void(0);" onclick="openCloakedTab('https://cloudflare.rammerhead.org/')" style="color:white;" title="Cloudflare Rammerhead project">https://cloudflare.rammerhead.org/</a></li>
+        <li><a href="javascript:void(0);" onclick="openCloakedTab('https://nytimes.com/games/wordle/index.html/')" title="NYTimes Wordle game">nytimes.com/games/wordle/index.html</a></li>
+        <li><a href="javascript:void(0);" onclick="openCloakedTab('https://b-classs.org/')" title="B-ClassS website">https://b-classs.org/</a></li>
+        <li><a href="javascript:void(0);" onclick="openCloakedTab('https://55gms.com/g/')" title="55GMS - Gaming site">https://55gms.com/g/</a></li>
+        <li><a href="javascript:void(0);" onclick="openCloakedTab('https://cloudflare.rammerhead.org/')" title="Cloudflare Rammerhead project">https://cloudflare.rammerhead.org/</a></li>
     </ul>
 </body>
 </html>
-
