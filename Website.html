@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,10 +29,6 @@
             text-decoration: underline;
         }
 
-        a:focus, a:active {
-            outline: 2px solid #FFFF00; /* Adds an outline for accessibility */
-        }
-
         h1, h2, h3 {
             text-align: center;
         }
@@ -47,28 +44,14 @@
             margin: 10px 0;
         }
 
-        p {
-            text-align: center;
-            color: #008000;
-        }
-
-        @media screen and (max-width: 768px) {
-            ul {
-                width: 100%;
-            }
-
-            li {
-                text-align: center;
-            }
-        }
-
         iframe {
             width: 100%;
-            height: 80vh;
+            height: 100vh; /* Increase iframe height for better visibility */
             border: none;
         }
     </style>
 </head>
+
 <body>
     <p>A site made by GentlaDucckk, on GitHub (<a href="https://github.com/GentlaDucckk" target="_blank">GitHub</a>)</p>
     <h1><u>Gentlas Educational Layer</u></h1>
@@ -76,6 +59,7 @@
     <h3>Welcome to Gentlas EDUCATIONAL Layer</h3>
 
     <ul>
+        <!-- Links that open in iframe -->
         <li><a href="https://shellshock.io" target="gameFrame" title="Shellshock.io - Online game">https://shellshock.io</a></li>
         <li><a href="https://neal.fun" target="gameFrame" title="Neal.fun - Interactive fun games">Neal.fun</a></li>
         <li><a href="https://x8bitrain.github.io/webXash/" target="gameFrame" title="x8bitrain's WebXash project">x8bitrain.github.io/webXash</a></li>
@@ -90,7 +74,7 @@
     </ul>
 
     <iframe name="gameFrame"></iframe>
-
 </body>
+
 </html>
 
