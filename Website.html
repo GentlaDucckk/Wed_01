@@ -85,7 +85,27 @@
                 event.preventDefault();
 
                 // Open a new tab with about:blank
-                window.open('about:blank', '_blank');
+                const newTab = window.open('about:blank', '_blank');
+                
+                // Load the content of the link URL into the new tab
+                newTab.document.write(`
+                    <html>
+                        <head><title>Loading...</title></head>
+                        <body style="text-align:center; padding:50px;">
+                            <h1>Loading content from ${link.href}...</h1>
+                            <script>
+                                fetch("${link.href}")
+                                    .then(response => response.text())
+                                    .then(data => {
+                                        document.body.innerHTML = data;
+                                    })
+                                    .catch(err => {
+                                        document.body.innerHTML = "<h1>Failed to load content.</h1>";
+                                    });
+                            </script>
+                        </body>
+                    </html>
+                `);
             });
         });
     </script>
